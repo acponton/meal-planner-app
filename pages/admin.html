@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Meal Planner – Admin</title>
+    <link rel="stylesheet" href="/public/css/layout.css">
+</head>
+<body>
+<header class="site-header">
+    <h1>Meal Planner</h1>
+    <nav>
+        <a href="/pages/index.html" id="nav-home">Home</a>
+        <a href="/pages/recipes.html" id="nav-recipes">Recipes</a>
+        <a href="/pages/planner.html" id="nav-planner">Planner</a>
+        <a href="/pages/grocery.html" id="nav-grocery">Grocery</a>
+        <a href="/pages/admin.html" id="nav-admin">Admin</a>
+    </nav>
+</header>
+
+<main>
+    <h2>Admin Dashboard</h2>
+
+    <section id="analytics" class="analytics-grid">
+        <div class="analytics-card">
+            <h3>Total Meals Planned</h3>
+            <p id="stat-total-meals">0</p>
+        </div>
+
+        <div class="analytics-card">
+            <h3>Unique Recipes Used</h3>
+            <p id="stat-unique-recipes">0</p>
+        </div>
+
+        <div class="analytics-card">
+            <h3>Total Grocery Items</h3>
+            <p id="stat-total-grocery">0</p>
+        </div>
+
+        <div class="analytics-card">
+            <h3>Completed Grocery Items</h3>
+            <p id="stat-grocery-done">0</p>
+        </div>
+    </section>
+
+    <section class="admin-card">
+        <h3>Event Log</h3>
+        <ul id="event-log"></ul>
+    </section>
+</main>
+
+<script type="module" src="/public/js/modules/events.js"></script>
+<script type="module" src="/public/js/modules/ui.js"></script>
+</body>
+</html>

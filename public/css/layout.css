@@ -1,0 +1,473 @@
+:root {
+    --bg: #f5f7f4;
+    --card-bg: #ffffff;
+    --primary: #5cb85c;
+    --primary-dark: #4a9d4a;
+    --danger: #e74c3c;
+    --text: #222;
+    --muted: #777;
+    --radius: 14px;
+    --shadow: 0 2px 10px rgba(0,0,0,0.08);
+    --transition: 0.25s ease;
+    --font: "Segoe UI", system-ui, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font);
+    background: var(--bg);
+    color: var(--text);
+}
+
+/* -----------------------------------------------------------
+   HEADER + NAVIGATION
+----------------------------------------------------------- */
+header.site-header {
+    background: var(--card-bg);
+    box-shadow: var(--shadow);
+    padding: 1rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+header.site-header h1 {
+    margin: 0;
+    font-size: 1.6rem;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--muted);
+    padding: 0.4rem 0.8rem;
+    border-radius: 999px;
+    transition: var(--transition);
+    font-weight: 500;
+}
+
+nav a.active,
+nav a:hover {
+    background: var(--primary);
+    color: #fff;
+}
+
+/* -----------------------------------------------------------
+   MAIN LAYOUT
+----------------------------------------------------------- */
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1.5rem 1rem 3rem;
+}
+
+/* -----------------------------------------------------------
+   HERO SECTION
+----------------------------------------------------------- */
+.hero {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+}
+
+.hero-content h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.hero-content p {
+    color: var(--muted);
+    margin-bottom: 1.2rem;
+}
+
+.hero-btn {
+    padding: 0.7rem 1.4rem;
+    font-size: 1rem;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 380px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    margin: 0 auto;
+}
+
+/* Desktop hero */
+@media (min-width: 800px) {
+    .hero {
+        flex-direction: row;
+        align-items: center;
+        text-align: left;
+    }
+}
+
+/* -----------------------------------------------------------
+   BUTTONS
+----------------------------------------------------------- */
+.btn {
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    border-radius: 999px;
+    padding: 0.5rem 1.2rem;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: var(--transition);
+}
+
+.btn:hover {
+    background: var(--primary-dark);
+    transform: translateY(-1px);
+}
+
+.btn-small {
+    padding: 0.25rem 0.6rem;
+    font-size: 0.8rem;
+}
+
+.btn-danger {
+    background: var(--danger);
+}
+
+/* -----------------------------------------------------------
+   FORMS
+----------------------------------------------------------- */
+input[type="text"],
+input[type="search"] {
+    padding: 0.55rem 0.8rem;
+    border-radius: 999px;
+    border: 1px solid #ddd;
+    width: 100%;
+    max-width: 320px;
+}
+
+form {
+    margin-bottom: 1rem;
+}
+
+/* -----------------------------------------------------------
+   RECIPE CARDS + GRID
+----------------------------------------------------------- */
+.recipe-grid,
+#results {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.recipe-card {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 1rem;
+    text-align: center;
+}
+
+.recipe-card img {
+    width: 100%;
+    border-radius: var(--radius);
+    object-fit: cover;
+    max-height: 200px;
+}
+
+.recipe-card h3 {
+    cursor: pointer;
+    margin: 0.75rem 0;
+}
+
+/* Desktop recipe grid */
+@media (min-width: 700px) {
+    .recipe-grid,
+    #results {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+}
+
+/* -----------------------------------------------------------
+   MEAL PLANNER
+----------------------------------------------------------- */
+#planner {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.day-card {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 1rem;
+}
+
+.day-card header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.meal-list {
+    list-style: none;
+    padding: 0;
+    margin: 0.75rem 0;
+}
+
+.meal-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.35rem 0;
+}
+
+/* Desktop planner grid */
+@media (min-width: 900px) {
+    #planner {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* -----------------------------------------------------------
+   SELECTED RECIPE
+----------------------------------------------------------- */
+#selected-recipe {
+    margin-bottom: 1.5rem;
+}
+
+.selected-card {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 1rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.selected-card img {
+    width: 120px;
+    height: 120px;
+    border-radius: var(--radius);
+    object-fit: cover;
+}
+
+/* Mobile selected recipe */
+@media (max-width: 600px) {
+    .selected-card {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* -----------------------------------------------------------
+   GROCERY LIST
+----------------------------------------------------------- */
+#grocery-list {
+    list-style: none;
+    padding: 0;
+}
+
+#grocery-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.4rem 0;
+}
+
+#grocery-list span.done {
+    text-decoration: line-through;
+    color: var(--muted);
+}
+
+/* -----------------------------------------------------------
+   ADMIN ANALYTICS CARDS
+----------------------------------------------------------- */
+.analytics-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.analytics-card {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 1.2rem;
+    text-align: center;
+}
+
+.analytics-card h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: var(--muted);
+}
+
+.analytics-card p {
+    font-size: 2rem;
+    margin: 0.5rem 0 0;
+    font-weight: bold;
+    color: var(--primary-dark);
+}
+
+/* Desktop analytics grid */
+@media (min-width: 700px) {
+    .analytics-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* -----------------------------------------------------------
+   ADMIN EVENT LOG
+----------------------------------------------------------- */
+.admin-card {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 1rem;
+}
+
+#event-log {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#event-log li {
+    padding: 0.3rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+/* -----------------------------------------------------------
+   EMPTY STATES + LOADING
+----------------------------------------------------------- */
+.empty-state {
+    color: var(--muted);
+    font-style: italic;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.is-loading::after {
+    content: "Loading...";
+    display: block;
+    text-align: center;
+    color: var(--muted);
+    margin-top: 1rem;
+}
+
+/* -----------------------------------------------------------
+   TOAST NOTIFICATIONS
+----------------------------------------------------------- */
+.toast {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    background: #333;
+    color: #fff;
+    padding: 0.75rem 1.2rem;
+    border-radius: 999px;
+    box-shadow: var(--shadow);
+    opacity: 0;
+    transform: translateY(10px);
+    transition: var(--transition);
+    z-index: 1000;
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.toast-success {
+    background: #27ae60;
+}
+
+.toast-error {
+    background: #c0392b;
+}
+
+.toast-info {
+    background: #2980b9;
+}
+
+/* -----------------------------------------------------------
+   RECIPE DETAILS MODAL
+----------------------------------------------------------- */
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    padding: 1rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+}
+
+.modal.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-content {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    max-width: 600px;
+    width: 100%;
+    padding: 1.5rem;
+    position: relative;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.modal-close {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: var(--muted);
+}
+
+.modal img {
+    width: 100%;
+    border-radius: var(--radius);
+    margin-bottom: 1rem;
+}
+
+.modal h2 {
+    margin-top: 0;
+}
+
+.modal h3 {
+    margin-top: 1.5rem;
+}
+
+.modal ul {
+    padding-left: 1.2rem;
+}
+
+.hidden {
+    display: none;
+}

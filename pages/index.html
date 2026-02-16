@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Meal Planner – Grocery List</title>
+    <title>Meal Planner – Home</title>
     <link rel="stylesheet" href="/public/css/layout.css">
 </head>
 <body>
@@ -18,17 +18,20 @@
 </header>
 
 <main>
-    <h2>Grocery List</h2>
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Plan Your Week With Ease</h2>
+            <p>Search recipes, build your weekly meal plan, and create your grocery list — all in one place.</p>
+            <a href="/pages/recipes.html" class="btn hero-btn">Start Planning</a>
+        </div>
 
-    <form id="grocery-form">
-        <input type="text" id="grocery-input" placeholder="Add an item...">
-        <button class="btn" type="submit">Add</button>
-    </form>
-
-    <ul id="grocery-list"></ul>
+        <div class="hero-image">
+            <img src="/public/assets/images/hero.jpg" alt="Healthy meal ingredients">
+        </div>
+    </section>
 </main>
 
-<script type="module" src="/public/js/modules/groceryList.js"></script>
+
 <script type="module" src="/public/js/modules/ui.js"></script>
 </body>
 </html>

@@ -2,28 +2,39 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Recipes</title>
-    <link rel="stylesheet" href="../styles.css">
+    <title>Meal Planner – Recipes</title>
+    <link rel="stylesheet" href="/public/css/layout.css">
 </head>
-
 <body>
-    <header>
-        <nav>
-            <a href="../pages/planner.html">Meal Planner</a>
-            <a href="../pages/recipes.html">Recipes</a>
-            <a href="../pages/grocery.html">Grocery List</a>
-        </nav>
-    </header>
+<header class="site-header">
+    <h1>Meal Planner</h1>
+    <nav>
+        <a href="/pages/index.html" id="nav-home">Home</a>
+        <a href="/pages/recipes.html" id="nav-recipes">Recipes</a>
+        <a href="/pages/planner.html" id="nav-planner">Planner</a>
+        <a href="/pages/grocery.html" id="nav-grocery">Grocery</a>
+        <a href="/pages/admin.html" id="nav-admin">Admin</a>
+    </nav>
+</header>
 
-    <main>
-        <form id="recipe-search-form">
-            <input type="text" placeholder="Search recipes..." required>
-            <button type="submit">Search</button>
-        </form>
+<main>
+    <h2>Search Recipes</h2>
+    <form id="search-form">
+        <input type="search" id="search-input" placeholder="Search for recipes...">
+        <button class="btn" type="submit">Search</button>
+    </form>
 
-        <div id="results"></div>
-    </main>
+    <section id="results" class="recipe-grid"></section>
+</main>
 
-    <script type="module" src="../main.js"></script>
+<div id="recipe-modal" class="modal">
+    <div class="modal-content">
+        <button class="modal-close">&times;</button>
+        <div id="modal-body"></div>
+    </div>
+</div>
+
+<script type="module" src="/public/js/modules/recipeSearch.js"></script>
+<script type="module" src="/public/js/modules/ui.js"></script>
 </body>
 </html>
