@@ -2,24 +2,36 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Meal Planner – Welcome</title>
-    <link rel="stylesheet" href="public/css/layout.css">
+    <title>Meal Planner – Home</title>
+    <link rel="stylesheet" href="../public/css/layout.css">
 </head>
 <body>
-
 <header class="site-header">
     <h1>Meal Planner</h1>
+    <nav>
+        <a href="../index.html" id="nav-home">Home</a>
+        <a href="../pages/recipes.html" id="nav-recipes">Recipes</a>
+        <a href="../pages/planner.html" id="nav-planner">Planner</a>
+        <a href="../pages/grocery.html" id="nav-grocery">Grocery</a>
+        <a href="../pages/admin.html" id="nav-admin">Admin</a>
+    </nav>
 </header>
 
 <main>
-    <h2>Welcome</h2>
-    <p>This is the landing page. Use the links below to enter the app.</p>
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Plan Your Week With Ease</h2>
+            <p>Search recipes, build your weekly meal plan, and create your grocery list — all in one place.</p>
+            <a href="../pages/recipes.html" class="btn hero-btn">Start Planning</a>
+        </div>
 
-    <nav class="landing-nav">
-        <a class="btn" href="pages/index.html">Enter App</a>
-    </nav>
+        <div class="hero-image">
+            <img src="../public/assets/images/hero.jpg" alt="Healthy meal ingredients">
+        </div>
+    </section>
 </main>
 
-<script type="module" src="main.js"></script>
+
+<script type="module" src="../public/js/modules/ui.js"></script>
 </body>
 </html>
